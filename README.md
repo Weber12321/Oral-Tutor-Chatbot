@@ -10,15 +10,15 @@ If you are urging with monitor dashboard for tracing the flow information, pleas
 Clone the project and setup the environment with docker:
 
 ```bash
-$ git clone git@github.com:TPI-AIPD/viki-agent-lab.git
-$ cd viki-agent-lab
+$ git clone https://github.com/Weber12321/Oral-Tutor-Chatbot.git
+$ cd Oral-Tutor-Chatbot
 
 # Setup Langfuse before starting langflow
 $ cp .env.example .env
 $ vim .env
 # (IMPOERTANT) Edit the langfuse ip with your own
 
-$ docker compose -f docker-compose.langfuse.yml up --build
+$ docker compose -f dockers/docker-compose.langfuse.yml up --build
 ```
 
 Enter Langfuse via http://localhost:3000, create an project and configure a set of secret key and public key. For details operation information, please visit the document of [Lanfuse](https://langfuse.com/).
@@ -34,7 +34,7 @@ Restart the docker compose services to load the environment variables, and check
 ## Setup Lanflow only
 
 ```bash
-$ docker compose -f docker-compose.langflow.yml up
+$ docker compose -f dockers/docker-compose.langflow.yml up
 ```
 
 Start using Langflow at http://localhost:7860.
