@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  langflow:
+    image: langflowai/langflow:latest
+    ports:
+      - "7860:7860"
+    environment:
+      - LANGFLOW_DATABASE_URL=postgresql://postgres:postgres@postgres:${POSTGRES_PORT}/langflow
+      - LANGFLOW_COMPONENTS_PATH=/app/custom_components/
+    env_file:
+      - docker-vars.env
+    volumes:
+      - langflow-data:/app/langflow
+      - ./custom_components:/app/custom_components/
+      
+volumes:
+  langflow-data:
+
